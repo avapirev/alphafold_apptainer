@@ -3,6 +3,7 @@ From: base.sif
 
 # Build instructions from
 # https://github.com/kalininalab/alphafold_non_docker
+# Note: Versions of Python packages removed in order to resolve outdated and missing for Python 3.8
 
 %files
     run.sh /opt/run.sh
