@@ -34,6 +34,7 @@ From: base.sif
     # Originally, AlphaFold pins OpenMM to 7.5.1, an old version that is no longer supported.
     # It also requires applying a patch (file docker/openmm.patch in the official AlphaFold git) related to disulfide bonds.
     # New versions of OpenMM includes that fix, so the patch isn't needed anymore.
+    # AlphaFold Issues - https://github.com/deepmind/alphafold/issues/404#issue-1172485609
 
     cd /opt/miniconda3/envs/alphafold/lib/python3.8/site-packages/ && patch -p0 < $alphafold_path/docker/openmm.patch
     
