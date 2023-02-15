@@ -17,7 +17,7 @@ From: base.sif
     conda update -n base conda
     conda activate alphafold
 
-    conda install -y -c conda-forge openmm cudnn cudatoolkit pdbfixer
+    conda install -y -c conda-forge openmm=7.5.1 cudnn cudatoolkit pdbfixer
     conda install -y -c bioconda hmmer hhsuite kalign2
 
     # alphafold setup
