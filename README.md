@@ -7,15 +7,15 @@ Build instructions from [non-docker setting](https://github.com/kalininalab/alph
 ## Build container
 ```
 # build base container
-singularity build --fakeroot base.sif base.def
+apptainer build --fakeroot base.sif base.def
 
 # build alphafold container
-singularity build --fakeroot alphafold.sif alphafold.def
+apptainer build --fakeroot alphafold.sif alphafold.def
 ```
 
 ## Run Alphafold
 ```
-singularity exec --nv -B <DATA_DIR> alphafold.sif bash
+apptainer exec --nv -B <DATA_DIR> alphafold.sif bash
 source /opt/miniconda3/etc/profile.d/conda.sh
 conda activate alphafold
 cd /opt/alphafold/
