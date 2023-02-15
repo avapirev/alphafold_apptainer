@@ -1,5 +1,7 @@
 Bootstrap: docker
 From: nvcr.io/nvidia/tensorflow:23.01-tf2-py3
 
-# The latest Tensorflow Nvidia container version can be checked here 
+# Version 23.01-tf2-py3 needs Python 3.8.
+# The available Tensorflow Nvidia container versions can be checked here
 # https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/
+# For each container version the Python version must be accordingly set in 'alphafold.def'
