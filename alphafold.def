@@ -17,25 +17,25 @@ From: base.sif
     conda update -n base conda
     conda activate alphafold
 
-    conda install -y -c conda-forge openmm=7.5.1 cudnn cudatoolkit pdbfixer
+    conda install -y -c conda-forge openmm cudnn cudatoolkit pdbfixer
     conda install -y -c bioconda hmmer hhsuite kalign2
 
     # alphafold setup
     cd /opt/
     git clone https://github.com/deepmind/alphafold.git
-    alphafold_path="/opt/alphafold"
+    # alphafold_path="/opt/alphafold"
 
     wget -q -P alphafold/alphafold/common/ https://git.scicore.unibas.ch/schwede/openstructure/-/raw/7102c63615b64735c4941278d92b554ec94415f8/modules/mol/alg/src/stereo_chemical_props.txt
 
-    pip install absl-py==1.0.0 biopython==1.79 chex==0.0.7 dm-haiku==0.0.9 dm-tree==0.1.6 immutabledict==2.0.0 jax==0.3.25 ml-collections==0.1.0 numpy==1.21.6 pandas==1.3.4 scipy==1.7.0 tensorflow
+    pip install absl-py biopython chex dm-haiku dm-tree immutabledict jax ml-collections numpy pandas scipy tensorflow
     pip install --upgrade jax jaxlib -f https://storage.googleapis.com/jax-releases/jax_releases.html
     pip install -r alphafold/requirements.txt
 
     # Originally, AlphaFold pins OpenMM to 7.5.1, an old version that is no longer supported.
-    # It also requires applying a patch (file docker/openmm.patch in the official AlphaFold git) related to disulfide bonds.
-    # New versions of OpenMM includes that fix, so the patch isn't needed anymore.
+    # It also requires applying a patch (file docker/openmm.patch in the official AlphaFold git repository) related to disulfide bonds.
+    # Newer versions of OpenMM include that fix and so the patch isn't needed anymore.
     # AlphaFold Issues - https://github.com/deepmind/alphafold/issues/404#issue-1172485609
 
-    cd /opt/miniconda3/envs/alphafold/lib/python3.8/site-packages/ && patch -p0 < $alphafold_path/docker/openmm.patch
-    
+    # cd /opt/miniconda3/envs/alphafold/lib/python3.8/site-packages/ && patch -p0 < $alphafold_path/docker/openmm.patch
+
     mv /opt/run.sh /opt/alphafold/run.sh
