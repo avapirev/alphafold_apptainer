@@ -1,6 +1,6 @@
 # AlphaFold Apptainer Container
 
-This repo provides definition files to build an Apptainer container of AlphaFold v2 (https://github.com/deepmind/alphafold).
+This repo provides definition files to build an Apptainer container of AlphaFold v2 (https://github.com/deepmind/alphafold). The current repository fork deals with an updated list of Python packages. Bare in mind that the accuracy of Alphafold has been tested against a specific set of packages where some of those are either too old and/or buggy, and hence not maintained anymore.
 
 Build instructions from [non-docker setting](https://github.com/kalininalab/alphafold_non_docker) by kalininalab were used.
 
