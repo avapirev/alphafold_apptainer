@@ -14,6 +14,7 @@ apptainer build --fakeroot alphafold.sif alphafold.def
 ```
 
 ## Run Alphafold
+If using GPUs then use the '--nv' flag, i.e. 'apptainer exec --nv ...'
 ```
 apptainer exec --nv -B <DATA_DIR> alphafold.sif bash
 source /opt/miniconda3/etc/profile.d/conda.sh
